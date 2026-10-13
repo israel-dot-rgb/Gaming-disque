@@ -1,0 +1,33 @@
+# ==========================================================================
+# _headers : RÈGLES DE SÉCURITÉ ENVOYÉES PAR LE SERVEUR (Netlify)
+# Ce fichier est lu automatiquement par Netlify quand tu glisses le dossier.
+# Il n'est PAS visible par les visiteurs. Ne le renomme pas, ne le supprime pas.
+# Si tu héberges ailleurs (GitHub Pages...), ces règles ne s'appliquent pas :
+# voir README.md.
+# ==========================================================================
+
+/*
+  # Politique de contenu : la page ne peut charger QUE ses propres fichiers.
+  #  - default-src 'none'  : tout est interdit par défaut
+  #  - img-src 'self'      : images uniquement depuis ce site
+  #  - style-src 'self'    : CSS uniquement depuis style.css
+  #  - script-src 'self'   : JavaScript uniquement depuis script.js (bloque tout script injecté)
+  #  - base-uri 'none'     : empêche de détourner les liens de la page
+  #  - form-action 'none'  : aucun formulaire ne peut envoyer de données ailleurs
+  #  - frame-ancestors 'none' : personne ne peut afficher ta page dans un cadre sur son site (anti "clickjacking")
+  Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+  # Force le navigateur à respecter le type de chaque fichier (bloque des détournements)
+  X-Content-Type-Options: nosniff
+
+  # Refuse l'affichage de la page dans un cadre (ancienne version de frame-ancestors)
+  X-Frame-Options: DENY
+
+  # Ne transmet pas l'adresse de ta page aux sites ouverts depuis elle
+  Referrer-Policy: no-referrer
+
+  # Coupe l'accès caméra, micro, localisation, etc. (la page n'en a pas besoin)
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+  # Oblige l'usage de HTTPS pendant 1 an : empêche les connexions non chiffrées
+  Strict-Transport-Security: max-age=31536000

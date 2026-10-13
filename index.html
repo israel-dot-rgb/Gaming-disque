@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PAGE D'INSCRIPTION : CONFÉRENCE « CRÉER SON DISQUE GAMING PC »
+  ============================================================
+  Ce fichier contient UNIQUEMENT la structure et les textes.
+    - Le design est dans      : style.css
+    - Le comportement est dans : script.js
+    - Les photos sont dans     : le dossier images/
+  Pour modifier un texte (date, prix...), cherche-le ici avec Ctrl+F.
+  Voir README.md pour le guide complet.
+-->
+<html lang="fr">
+<head>
+  <!-- Encodage des caractères : indispensable pour les accents (é, è, à...) -->
+  <meta charset="utf-8">
+
+  <!-- Adapte la page à la largeur de l'écran (téléphone). viewport-fit=cover gère les écrans à encoche. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!--
+    SÉCURITÉ : "no-referrer" empêche le navigateur de dire à WhatsApp
+    de quelle page vient le visiteur. Moins d'informations partagées.
+  -->
+  <meta name="referrer" content="no-referrer">
+
+  <!-- Titre affiché dans l'onglet du navigateur et dans les partages -->
+  <title>Conférence en ligne : créer son disque gaming PC</title>
+
+  <!-- Lien vers le fichier de design -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--
+    BIBLIOTHÈQUE D'ICÔNES (invisible)
+    On dessine chaque icône une seule fois ici (balise <symbol>),
+    puis on la réutilise plus bas avec <use href="#nom-de-l-icone">.
+    La classe "sprite" la cache (voir style.css).
+  -->
+  <svg class="sprite" aria-hidden="true" width="0" height="0">
+    <symbol id="i-disk" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="8" cy="12" r="2.5"/><path d="M14 9h4M14 12h4M14 15h2"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></symbol>
+    <symbol id="i-pad" viewBox="0 0 24 24"><path d="M6 9h12a3 3 0 0 1 3 3.5l-.7 4a2 2 0 0 1-3.4 1L15 16H9l-1.9 1.5a2 2 0 0 1-3.4-1l-.7-4A3 3 0 0 1 6 9z"/><path d="M8 11.5v3M6.5 13h3"/><circle cx="15.5" cy="12" r=".6"/><circle cx="17.5" cy="14" r=".6"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></symbol>
+  </svg>
+
+  <!-- Deux grosses taches de couleur floue en fond (décoration, animées en CSS) -->
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+
+  <main>
+
+    <!-- ==================== 1. EN-TÊTE (HERO) ==================== -->
+    <section class="hero">
+      <div>
+        <!-- Petites étiquettes d'information. POUR AJOUTER LA DATE : remplace "Date à confirmer". -->
+        <div class="tags">
+          <span class="tag">🌐 En ligne · Google Meet</span>
+          <span class="tag">⏱ 2 heures</span>
+          <span class="tag">📅 Date à confirmer</span>
+        </div>
+
+        <!-- Titre principal. La partie dans <span> reçoit le dégradé de couleur. -->
+        <h1>Crée ton <span>disque gaming PC</span> avec tes jeux</h1>
+
+        <p class="lead">Un seul disque, tous tes jeux, prêts à lancer sur n'importe quel PC. Apprends à le préparer en 2h, en direct.</p>
+
+        <!-- Bouton qui fait défiler la page jusqu'au formulaire (#inscription). PRIX À MODIFIER ICI AUSSI. -->
+        <a class="btn" href="#inscription">Je réserve ma place · 2 000 FCFA</a>
+      </div>
+
+      <!-- Photo principale. Le texte "alt" décrit l'image pour les lecteurs d'écran. -->
+      <img class="art photo" alt="Poste de jeu PC avec écran lumineux" src="images/gaming-room.jpg" width="736" height="1104" />
+    </section>
+
+    <!-- ==================== 2. BANDEAU MANETTE ==================== -->
+    <div class="band reveal">
+      <img alt="Manette de jeu lumineuse" src="images/manette.jpg" loading="lazy">
+      <div>
+        <h3>Un disque. Tous tes jeux.</h3>
+        <p>Branche-le sur n'importe quel PC et lance ta partie sans tout réinstaller. Tu repars avec la méthode complète, étape par étape.</p>
+      </div>
+    </div>
+
+    <!-- ==================== 3. CE QU'ON APPREND ==================== -->
+    <!-- Classe "reveal" : l'élément apparaît en douceur quand on arrive dessus (géré par script.js) -->
+    <h2 class="reveal">Ce que tu vas apprendre</h2>
+    <div class="grid">
+      <!-- 4 cartes identiques. Pour en ajouter une, copie un bloc <div class="card reveal">…</div>. -->
+      <div class="card reveal">
+        <div class="ic"><svg><use href="#i-disk"/></svg></div>
+        <h3>Bien choisir</h3>
+        <p>HDD, SSD, NVMe ou disque externe : lequel te convient.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg><use href="#i-tool"/></svg></div>
+        <h3>Préparer</h3>
+        <p>Formatage, partitions, NTFS ou exFAT, en démo live.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg><use href="#i-pad"/></svg></div>
+        <h3>Installer tes jeux</h3>
+        <p>Steam, Epic, GOG : déplace ta bibliothèque et joue partout.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg><use href="#i-bolt"/></svg></div>
+        <h3>Optimiser</h3>
+        <p>Tests de vitesse et solutions aux problèmes courants.</p>
+      </div>
+    </div>
+    <p class="note reveal">Formation basée sur des jeux légitimes : achetés, gratuits ou sans DRM.</p>
+
+    <!-- ==================== 4. INSCRIPTION ==================== -->
+    <h2 id="inscription" class="reveal">Réserve ta place</h2>
+    <div class="card reveal">
+
+      <!-- PRIX À MODIFIER ICI (et dans le bouton du haut, et dans script.js) -->
+      <div class="price">2 000 FCFA</div>
+      <p class="note flush">Paiement par Mobile Money. Le lien Google Meet t'est envoyé après vérification du paiement.</p>
+
+      <!-- Numéros de paiement affichés au public -->
+      <div class="pay">
+        <div>T-Money<b>+228 92 94 22 56</b></div>
+        <div>Flooz<b>+228 97 53 78 29</b></div>
+      </div>
+
+      <!--
+        FORMULAIRE : ce n'est PAS un vrai <form> envoyé à un serveur.
+        Les champs sont lus par script.js, qui prépare un message WhatsApp.
+        Aucune donnée n'est enregistrée sur la page ni envoyée ailleurs.
+        - maxlength : limite la longueur saisie (sécurité + confort)
+        - required  : champ obligatoire
+        - autocomplete : permet au téléphone de proposer le nom
+      -->
+      <label for="nom">Ton nom</label>
+      <input id="nom" type="text" autocomplete="name" placeholder="Nom et prénom" maxlength="60" minlength="2" required>
+
+      <label for="ville">Ta ville</label>
+      <input id="ville" type="text" autocomplete="address-level2" placeholder="Ex : Lomé" maxlength="60" minlength="2" required>
+
+      <label for="niveau">Ton niveau</label>
+      <select id="niveau">
+        <option>Débutant</option>
+        <option>Intermédiaire</option>
+        <option>Avancé</option>
+      </select>
+
+      <label for="moyen">Moyen de paiement utilisé</label>
+      <select id="moyen">
+        <option>T-Money</option>
+        <option>Flooz</option>
+      </select>
+
+      <!--
+        BOUTON WHATSAPP : c'est un simple lien. script.js complète son adresse
+        avec le message juste avant l'ouverture.
+        SÉCURITÉ : rel="noopener noreferrer" empêche la page WhatsApp ouverte
+        de prendre le contrôle de cette page et ne transmet pas l'adresse d'origine.
+      -->
+      <a id="go" class="btn full" href="https://wa.me/22897537819" target="_blank" rel="noopener noreferrer">S'inscrire sur WhatsApp</a>
+
+      <!-- Zone des messages d'erreur (remplie par script.js). aria-live : lue par les lecteurs d'écran. -->
+      <div class="err" id="err" aria-live="polite"></div>
+
+      <p class="note">Le bouton ouvre WhatsApp avec un message prérempli. Après avoir payé, envoie la capture ou la référence du paiement dans la même conversation.</p>
+    </div>
+  </main>
+
+  <!-- Fichier de comportement. Chargé en dernier pour que la page s'affiche d'abord. -->
+  <script src="script.js"></script>
+</body>
+</html>
